@@ -1,6 +1,5 @@
 {
 	"LOADING": "Betöltés …",
-
 	"YESTERDAY": "Tegnap",
 	"TODAY": "Ma",
 	"TOMORROW": "Holnap",
@@ -8,7 +7,6 @@
 	"RUNNING": "Vége lesz",
 	"EMPTY": "Nincs közelgő esemény.",
 	"WEEK": "{weekNumber}. hét",
-
 	"N": "É",
 	"NNE": "ÉÉK",
 	"NE": "ÉK",
@@ -25,11 +23,9 @@
 	"WNW": "NyÉNy",
 	"NW": "ÉNy",
 	"NNW": "ÉÉNy",
-
 	"FEELS": "Érzet {DEGREE}",
 	"PRECIP_POP": "Csapadék valószínűség",
 	"PRECIP_AMOUNT": "Csapadék mennyisége",
-
 	"MODULE_CONFIG_CHANGED": "A(z) {MODULE_NAME} modul konfigurációs beállításai megváltoztak.\nKérjük, ellenőrizze a dokumentációt.",
 	"MODULE_CONFIG_ERROR": "Hiba a(z) {MODULE_NAME} modulban. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "Hibás URL.",
@@ -39,15 +35,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Szerverhiba. Újrapróbálkozás később.",
 	"MODULE_ERROR_CLIENT_ERROR": "A kérés meghiúsult.",
 	"MODULE_ERROR_UNSPECIFIED": "Ellenőrizze a naplókat további részletekért.",
-
 	"NEWSFEED_NO_ITEMS": "Jelenleg nincsenek hírek.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "A cikk itt nem jeleníthető meg.",
-
 	"UPDATE_NOTIFICATION": "MagicMirror²-hoz frissítés érhető el.",
 	"UPDATE_NOTIFICATION_MODULE": "A {MODULE_NAME} modulhoz frissítés érhető el.",
 	"UPDATE_INFO_SINGLE": "A jelenlegi telepítés óta {COMMIT_COUNT} új commit jelent meg a {BRANCH_NAME} ágon.",
 	"UPDATE_INFO_MULTIPLE": "A jelenlegi telepítés óta {COMMIT_COUNT} új commit jelent meg a {BRANCH_NAME} ágon.",
 	"UPDATE_NOTIFICATION_DONE": "A frissítés befejeződött a {MODULE_NAME} modulhoz.",
 	"UPDATE_NOTIFICATION_ERROR": "Hiba történt a frissítés során a {MODULE_NAME} modulhoz.",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "A MagicMirror újraindítása szükséges."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "A MagicMirror újraindítása szükséges.",
+	"sysTitle": "MagicMirror² értesítés",
+	"welcome": "Üdvözöljük, indulás sikeres!"
 }

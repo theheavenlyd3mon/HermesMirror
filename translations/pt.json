@@ -1,6 +1,5 @@
 {
 	"LOADING": "A carregar…",
-
 	"DAYBEFOREYESTERDAY": "Anteontem",
 	"YESTERDAY": "Ontem",
 	"TODAY": "Hoje",
@@ -10,7 +9,6 @@
 	"EMPTY": "Sem eventos programados.",
 	"WEEK": "Semana {weekNumber}",
 	"WEEK_SHORT": "S{weekNumber}",
-
 	"N": "N",
 	"NNE": "NNE",
 	"NE": "NE",
@@ -27,11 +25,9 @@
 	"WNW": "ONO",
 	"NW": "NO",
 	"NNW": "NNO",
-
 	"FEELS": "Sensação térmica {DEGREE}",
 	"PRECIP_POP": "Probabilidade de precipitação",
 	"PRECIP_AMOUNT": "Quantidade de precipitação",
-
 	"MODULE_CONFIG_CHANGED": "As opções de configuração do módulo {MODULE_NAME} foram alteradas.\nConsulta a documentação.",
 	"MODULE_CONFIG_ERROR": "Erro no módulo {MODULE_NAME}. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "URL inválido.",
@@ -41,15 +37,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Erro do servidor. A tentar novamente mais tarde.",
 	"MODULE_ERROR_CLIENT_ERROR": "Pedido falhou.",
 	"MODULE_ERROR_UNSPECIFIED": "Consulta os registos para mais detalhes.",
-
 	"NEWSFEED_NO_ITEMS": "Sem notícias de momento.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "O artigo não pode ser apresentado aqui.",
-
 	"UPDATE_NOTIFICATION": "Está disponível uma atualização do MagicMirror².",
 	"UPDATE_NOTIFICATION_MODULE": "Atualização disponível para o módulo {MODULE_NAME}.",
 	"UPDATE_INFO_SINGLE": "A instalação atual está {COMMIT_COUNT} commit atrás na ramificação {BRANCH_NAME}.",
 	"UPDATE_INFO_MULTIPLE": "A instalação atual está {COMMIT_COUNT} commits atrás na ramificação {BRANCH_NAME}.",
 	"UPDATE_NOTIFICATION_DONE": "Atualização concluída do módulo {MODULE_NAME}.",
 	"UPDATE_NOTIFICATION_ERROR": "Erro na atualização do módulo {MODULE_NAME}.",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "É necessário reiniciar o MagicMirror."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "É necessário reiniciar o MagicMirror.",
+	"sysTitle": "Notificação do MagicMirror²",
+	"welcome": "Bem-vindo, o sistema iniciou com sucesso!"
 }

@@ -1,6 +1,5 @@
 {
 	"LOADING": "Cargando …",
-
 	"DAYBEFOREYESTERDAY": "Anteayer",
 	"YESTERDAY": "Ayer",
 	"TODAY": "Hoy",
@@ -10,7 +9,6 @@
 	"EMPTY": "No hay eventos programados.",
 	"WEEK": "Semana {weekNumber}",
 	"WEEK_SHORT": "S{weekNumber}",
-
 	"N": "N",
 	"NNE": "NNE",
 	"NE": "NE",
@@ -27,11 +25,9 @@
 	"WNW": "ONO",
 	"NW": "NO",
 	"NNW": "NNO",
-
 	"FEELS": "Sensación térmica de {DEGREE}",
 	"PRECIP_POP": "Precipitación",
 	"PRECIP_AMOUNT": "Cantidad de precipitación",
-
 	"MODULE_CONFIG_CHANGED": "Las opciones de configuración para el módulo {MODULE_NAME} han cambiado. \nVerifique la documentación.",
 	"MODULE_CONFIG_ERROR": "Error en el módulo {MODULE_NAME}. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "URL mal formado.",
@@ -41,15 +37,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Error del servidor. Reintentando más tarde.",
 	"MODULE_ERROR_CLIENT_ERROR": "La solicitud falló.",
 	"MODULE_ERROR_UNSPECIFIED": "Por favor, consulte los registros para obtener más información.",
-
 	"NEWSFEED_NO_ITEMS": "No hay noticias disponibles en este momento.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "El artículo no se puede mostrar aquí.",
-
 	"UPDATE_NOTIFICATION": "MagicMirror² actualización disponible.",
 	"UPDATE_NOTIFICATION_MODULE": "Disponible una actualización para el módulo {MODULE_NAME}.",
 	"UPDATE_INFO_SINGLE": "Tu actual instalación está {COMMIT_COUNT} commit cambios detrás de la rama {BRANCH_NAME}.",
 	"UPDATE_INFO_MULTIPLE": "Tu actual instalación está {COMMIT_COUNT} commits cambios detrás de la rama {BRANCH_NAME}.",
 	"UPDATE_NOTIFICATION_DONE": "S'ha completat l'actualització del mòdul {MODULE_NAME}.",
 	"UPDATE_NOTIFICATION_ERROR": "S'ha produït un error durant l'actualització del mòdul {MODULE_NAME}.",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "És necessari reiniciar MagicMirror."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "És necessari reiniciar MagicMirror.",
+	"sysTitle": "MagicMirror² Notificaciones",
+	"welcome": "Bienvenido, ¡se iniciado correctamente!"
 }

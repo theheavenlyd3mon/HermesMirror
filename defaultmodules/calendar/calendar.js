@@ -241,18 +241,6 @@ Module.register("calendar", {
 			return wrapper;
 		}
 
-		let currentFadeStep = 0;
-		let startFade;
-		let fadeSteps;
-
-		if (this.config.fade && this.config.fadePoint < 1) {
-			if (this.config.fadePoint < 0) {
-				this.config.fadePoint = 0;
-			}
-			startFade = events.length * this.config.fadePoint;
-			fadeSteps = events.length - startFade;
-		}
-
 		let lastSeenDate = "";
 
 		events.forEach((event, index) => {
@@ -276,10 +264,9 @@ Module.register("calendar", {
 					dateRow.appendChild(dateCell);
 					wrapper.appendChild(dateRow);
 
-					if (this.config.fade && index >= startFade) {
-						//fading
-						currentFadeStep = index - startFade;
-						dateRow.style.opacity = 1 - (1 / fadeSteps) * currentFadeStep;
+					const dateOpacity = CalendarUtils.calculateFadeOpacity(this.config.fade, this.config.fadePoint, events.length, index);
+					if (dateOpacity < 1) {
+						dateRow.style.opacity = dateOpacity;
 					}
 
 					lastSeenDate = dateAsString;
@@ -350,24 +337,24 @@ Module.register("calendar", {
 
 			// Color events if custom color or eventClass are specified, transform title if required
 			if (this.config.customEvents.length > 0) {
-				for (let ev in this.config.customEvents) {
-					let needle = new RegExp(this.config.customEvents[ev].keyword, "gi");
+				for (let ev of this.config.customEvents) {
+					let needle = new RegExp(ev.keyword, "gi");
 					if (needle.test(event.title)) {
-						if (typeof this.config.customEvents[ev].transform === "object") {
-							transformedTitle = CalendarUtils.titleTransform(transformedTitle, [this.config.customEvents[ev].transform]);
+						if (typeof ev.transform === "object") {
+							transformedTitle = CalendarUtils.titleTransform(transformedTitle, [ev.transform]);
 						}
-						if (typeof this.config.customEvents[ev].color !== "undefined" && this.config.customEvents[ev].color !== "") {
-							// Respect parameter ColoredSymbolOnly also for custom events
+						if (typeof ev.color !== "undefined" && ev.color !== "") {
+						// Respect parameter ColoredSymbolOnly also for custom events
 							if (this.config.coloredText) {
-								eventWrapper.style.cssText = `color:${this.config.customEvents[ev].color}`;
-								titleWrapper.style.cssText = `color:${this.config.customEvents[ev].color}`;
+								eventWrapper.style.cssText = `color:${ev.color}`;
+								titleWrapper.style.cssText = `color:${ev.color}`;
 							}
 							if (this.config.displaySymbol && this.config.coloredSymbol) {
-								symbolWrapper.style.cssText = `color:${this.config.customEvents[ev].color}`;
+								symbolWrapper.style.cssText = `color:${ev.color}`;
 							}
 						}
-						if (typeof this.config.customEvents[ev].eventClass !== "undefined" && this.config.customEvents[ev].eventClass !== "") {
-							eventWrapper.className += ` ${this.config.customEvents[ev].eventClass}`;
+						if (typeof ev.eventClass !== "undefined" && ev.eventClass !== "") {
+							eventWrapper.className += ` ${ev.eventClass}`;
 						}
 					}
 				}
@@ -445,9 +432,9 @@ Module.register("calendar", {
 
 					wrapper.appendChild(locationRow);
 
-					if (index >= startFade) {
-						currentFadeStep = index - startFade;
-						locationRow.style.opacity = 1 - (1 / fadeSteps) * currentFadeStep;
+					const locOpacity = CalendarUtils.calculateFadeOpacity(this.config.fade, this.config.fadePoint, events.length, index);
+					if (locOpacity < 1) {
+						locationRow.style.opacity = locOpacity;
 					}
 				}
 			}

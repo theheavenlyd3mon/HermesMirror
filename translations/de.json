@@ -1,6 +1,5 @@
 {
 	"LOADING": "Lade …",
-
 	"DAYBEFOREYESTERDAY": "Vorgestern",
 	"YESTERDAY": "Gestern",
 	"TODAY": "Heute",
@@ -10,7 +9,6 @@
 	"EMPTY": "Keine Termine.",
 	"WEEK": "{weekNumber}. Kalenderwoche",
 	"WEEK_SHORT": "{weekNumber}KW",
-
 	"N": "N",
 	"NNE": "NNO",
 	"NE": "NO",
@@ -27,11 +25,9 @@
 	"WNW": "WNW",
 	"NW": "NW",
 	"NNW": "NNW",
-
 	"FEELS": "Gefühlt {DEGREE}",
 	"PRECIP_POP": "Niederschlagswahrscheinlichkeit",
 	"PRECIP_AMOUNT": "Niederschlagsmenge",
-
 	"MODULE_CONFIG_CHANGED": "Die Konfigurationsoptionen für das Modul „{MODULE_NAME}“ haben sich geändert. \nBitte überprüfen Sie die Dokumentation.",
 	"MODULE_CONFIG_ERROR": "Fehler im Modul „{MODULE_NAME}“. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "Fehlerhafte URL.",
@@ -41,15 +37,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Serverfehler. Erneuter Versuch später.",
 	"MODULE_ERROR_CLIENT_ERROR": "Anfrage fehlgeschlagen.",
 	"MODULE_ERROR_UNSPECIFIED": "Prüfe die Logdateien für weitere Details.",
-
 	"NEWSFEED_NO_ITEMS": "Momentan keine Neuigkeiten.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "Artikel kann hier nicht angezeigt werden.",
-
 	"UPDATE_NOTIFICATION": "Aktualisierung für MagicMirror² verfügbar.",
 	"UPDATE_NOTIFICATION_MODULE": "Aktualisierung für das Modul „{MODULE_NAME}“ verfügbar.",
 	"UPDATE_INFO_SINGLE": "Die aktuelle Installation ist ein Commit hinter dem {BRANCH_NAME}-Branch.",
 	"UPDATE_INFO_MULTIPLE": "Die aktuelle Installation ist {COMMIT_COUNT} Commits hinter dem {BRANCH_NAME}-Branch.",
 	"UPDATE_NOTIFICATION_DONE": "Aktualisierung für das Modul {MODULE_NAME} abgeschlossen.",
 	"UPDATE_NOTIFICATION_ERROR": "Fehler bei der Aktualisierung für das Modul {MODULE_NAME}.",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "MagicMirror muss neu gestartet werden."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "MagicMirror muss neu gestartet werden.",
+	"sysTitle": "MagicMirror² Benachrichtigung",
+	"welcome": "Willkommen, Start war erfolgreich!"
 }

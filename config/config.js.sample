@@ -37,6 +37,12 @@ let config = {
 	timeFormat: 24,
 	units: "metric",
 
+	hermes: {
+		gatewayUrl: "http://127.0.0.1:8642",
+		enabled: true,
+		refreshInterval: 30
+	},
+
 	modules: [
 		{
 			module: "alert",
@@ -102,6 +108,30 @@ let config = {
 				showPublishDate: true,
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true
+			}
+		},
+		{
+			module: "hermes-bridge",
+			position: "fullscreen_below",
+			config: {
+				gatewayUrl: "http://127.0.0.1:8642",
+				refreshInterval: 30
+			}
+		},
+		{
+			module: "hermes-dashboard",
+			position: "top_right",
+			config: {
+				maxTasks: 10,
+				showCompleted: false
+			}
+		},
+		{
+			module: "hermes-status",
+			position: "top_bar",
+			config: {
+				height: "4px",
+				showGatewayStatus: true
 			}
 		},
 	]

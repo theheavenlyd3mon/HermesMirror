@@ -1,6 +1,5 @@
 {
 	"LOADING": "Chargement…",
-
 	"DAYBEFOREYESTERDAY": "Avant-hier",
 	"YESTERDAY": "Hier",
 	"TODAY": "Aujourd'hui",
@@ -10,7 +9,6 @@
 	"EMPTY": "Aucun RDV à venir.",
 	"WEEK": "Semaine {weekNumber}",
 	"WEEK_SHORT": "S{weekNumber}",
-
 	"N": "N",
 	"NNE": "NNE",
 	"NE": "NE",
@@ -27,11 +25,9 @@
 	"WNW": "ONO",
 	"NW": "NO",
 	"NNW": "NNO",
-
 	"FEELS": "Ressenti {DEGREE}",
 	"PRECIP_POP": "Probabilité de précipitations",
 	"PRECIP_AMOUNT": "Quantité des précipitations",
-
 	"MODULE_CONFIG_CHANGED": "Les options de configuration du module {MODULE_NAME} ont changé.\nVeuillez consulter la documentation.",
 	"MODULE_CONFIG_ERROR": "Erreur dans le module {MODULE_NAME}. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "URL mal formée.",
@@ -41,15 +37,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Erreur du serveur. Nouvelle tentative plus tard.",
 	"MODULE_ERROR_CLIENT_ERROR": "La requête a échoué.",
 	"MODULE_ERROR_UNSPECIFIED": "Consultez les journaux pour plus de détails.",
-
 	"NEWSFEED_NO_ITEMS": "Aucune nouvelle pour le moment.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "L'article ne peut pas être affiché ici.",
-
 	"UPDATE_NOTIFICATION": "Une mise à jour de MagicMirror² est disponible",
 	"UPDATE_NOTIFICATION_MODULE": "Une mise à jour est disponible pour le module {MODULE_NAME}.",
 	"UPDATE_INFO_SINGLE": "L'installation actuelle est {COMMIT_COUNT} commit en retard sur la branche {BRANCH_NAME}.",
 	"UPDATE_INFO_MULTIPLE": "L'installation actuelle est {COMMIT_COUNT} commits en retard sur la branche {BRANCH_NAME}.",
 	"UPDATE_NOTIFICATION_DONE": "Mise à jour effectuée pour le module {MODULE_NAME}",
 	"UPDATE_NOTIFICATION_ERROR": "Erreur lors de la mise à jour du module {MODULE_NAME}",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "Le redémarrage de MagicMirror est nécessaire."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "Le redémarrage de MagicMirror est nécessaire.",
+	"sysTitle": "MagicMirror² Notification",
+	"welcome": "Bienvenue, le démarrage a été un succès!"
 }

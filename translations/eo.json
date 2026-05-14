@@ -1,6 +1,5 @@
 {
 	"LOADING": "Ŝarĝas …",
-
 	"DAYBEFOREYESTERDAY": "antaŭhieraŭ",
 	"YESTERDAY": "hieraŭ",
 	"TODAY": "hodiaŭ",
@@ -10,7 +9,6 @@
 	"EMPTY": "Neniu evento.",
 	"WEEK": "{weekNumber}a kalendara semajno",
 	"WEEK_SHORT": "{weekNumber}a KS",
-
 	"N": "N",
 	"NNE": "NNOr",
 	"NE": "NOr",
@@ -27,11 +25,9 @@
 	"WNW": "OkNOk",
 	"NW": "NOk",
 	"NNW": "NNOk",
-
 	"FEELS": "Perceptite kiel {DEGREE}",
 	"PRECIP_POP": "Ŝanco de pluvado",
 	"PRECIP_AMOUNT": "Kvanto de pluvo",
-
 	"MODULE_CONFIG_CHANGED": "La agordaj opcioj por la modulo „{MODULE_NAME}“ ŝanĝiĝis. \nBonvolu kontroli la dokumentadon.",
 	"MODULE_CONFIG_ERROR": "Eraro en la modulo „{MODULE_NAME}“. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "Malĝusta URL.",
@@ -41,15 +37,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Servila eraro. Reprovo poste.",
 	"MODULE_ERROR_CLIENT_ERROR": "Peto malsukcesis.",
 	"MODULE_ERROR_UNSPECIFIED": "Kontrolu la protokolajn dosierojn por pli da detaloj.",
-
 	"NEWSFEED_NO_ITEMS": "Momente neniu novaĵoj.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "Artikolo ne estas montrebla ĉi tie.",
-
 	"UPDATE_NOTIFICATION": "Ĝisdatigo por MagicMirror² disponebla.",
 	"UPDATE_NOTIFICATION_MODULE": "Ĝisdatigo por la modulo „{MODULE_NAME}“ disponebla.",
 	"UPDATE_INFO_SINGLE": "La nuna instalado estas unu komito malantaŭ la {BRANCH_NAME}-branĉo.",
 	"UPDATE_INFO_MULTIPLE": "La nuna instalado estas {COMMIT_COUNT} komitoj malantaŭ la {BRANCH_NAME}-branĉo.",
 	"UPDATE_NOTIFICATION_DONE": "Ĝisdatigo por la modulo {MODULE_NAME} finita.",
 	"UPDATE_NOTIFICATION_ERROR": "Eraro dum la ĝisdatigo de la modulo {MODULE_NAME}.",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "MagicMirror devas esti restartigita."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "MagicMirror devas esti restartigita.",
+	"sysTitle": "MagicMirror²-sciigo",
+	"welcome": "Bonvenon, lanĉo sukcesis!"
 }

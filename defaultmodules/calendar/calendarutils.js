@@ -120,6 +120,26 @@ const CalendarUtils = {
 			}
 		}
 		return transformedTitle;
+	},
+
+	/**
+	 * Calculates fade opacity for a given step in a list.
+	 * Used by both calendar and weather modules for consistent fade effect.
+	 * @param {boolean} fade - Whether fade is enabled.
+	 * @param {number} fadePoint - Fraction after which to start fading (0-1).
+	 * @param {number} numSteps - Total number of steps/entries.
+	 * @param {number} currentStep - Current step index (0-based).
+	 * @returns {number} Opacity value (0 to 1).
+	 */
+	calculateFadeOpacity (fade, fadePoint, numSteps, currentStep) {
+		if (!fade || fadePoint >= 1) return 1;
+		const fp = Math.max(0, fadePoint);
+		const startingPoint = numSteps * fp;
+		const numFadeSteps = numSteps - startingPoint;
+		if (currentStep >= startingPoint) {
+			return 1 - (currentStep - startingPoint) / numFadeSteps;
+		}
+		return 1;
 	}
 };
 

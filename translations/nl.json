@@ -1,6 +1,5 @@
 {
 	"LOADING": "Bezig met laden …",
-
 	"DAYBEFOREYESTERDAY": "Eergisteren",
 	"YESTERDAY": "Gisteren",
 	"TODAY": "Vandaag",
@@ -9,7 +8,6 @@
 	"RUNNING": "Eindigt over",
 	"EMPTY": "Geen geplande afspraken.",
 	"WEEK": "Week {weekNumber}",
-
 	"N": "N",
 	"NNE": "NNO",
 	"NE": "NO",
@@ -26,11 +24,9 @@
 	"WNW": "WNW",
 	"NW": "NW",
 	"NNW": "NNW",
-
 	"FEELS": "Voelt als {DEGREE}",
 	"PRECIP_POP": "Neerslagkans",
 	"PRECIP_AMOUNT": "Neerslaghoeveelheid",
-
 	"MODULE_CONFIG_CHANGED": "De configuratie opties voor de module {MODULE_NAME} zijn gewijzigd.\nControleer de documentatie.",
 	"MODULE_CONFIG_ERROR": "Fout in de {MODULE_NAME} module. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "Ongeldige url.",
@@ -40,15 +36,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Serverfout. Later opnieuw proberen.",
 	"MODULE_ERROR_CLIENT_ERROR": "Verzoek mislukt.",
 	"MODULE_ERROR_UNSPECIFIED": "Bekijk de logs voor meer informatie.",
-
 	"NEWSFEED_NO_ITEMS": "Geen nieuws op dit moment.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "Artikel kan hier niet worden weergegeven.",
-
 	"UPDATE_NOTIFICATION": "MagicMirror² update beschikbaar.",
 	"UPDATE_NOTIFICATION_MODULE": "Update beschikbaar voor {MODULE_NAME} module.",
 	"UPDATE_INFO_SINGLE": "De huidige installatie loopt {COMMIT_COUNT} commit achter op de {BRANCH_NAME} branch.",
 	"UPDATE_INFO_MULTIPLE": "De huidige installatie loopt {COMMIT_COUNT} commits achter op de {BRANCH_NAME} branch.",
 	"UPDATE_NOTIFICATION_DONE": "Update voltooid voor {MODULE_NAME} module.",
 	"UPDATE_NOTIFICATION_ERROR": "Fout tijdens het updaten van {MODULE_NAME} module.",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "MagicMirror moet opnieuw worden opgestart."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "MagicMirror moet opnieuw worden opgestart.",
+	"sysTitle": "MagicMirror² Notificatie",
+	"welcome": "Welkom, Succesvol gestart!"
 }

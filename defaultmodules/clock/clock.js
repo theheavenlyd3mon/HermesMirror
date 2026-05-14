@@ -83,9 +83,6 @@ Module.register("clock", {
 		// Set the initial timeout with the amount of seconds elapsed as
 		// reducedSeconds, so it will trigger when the minute changes
 		setTimeout(notificationTimer, delayCalculator(this.second));
-
-		// Set locale.
-		moment.locale(config.language);
 	},
 	// Override dom generator.
 	getDom () {

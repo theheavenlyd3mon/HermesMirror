@@ -1,6 +1,5 @@
 {
 	"LOADING": "Φόρτωση ...",
-
 	"DAYBEFOREYESTERDAY": "Προχθές",
 	"YESTERDAY": "Χθες",
 	"TODAY": "Σήμερα",
@@ -9,7 +8,6 @@
 	"RUNNING": "Λήγει σε",
 	"EMPTY": "Δεν υπάρχουν προσεχείς εκδηλώσεις.",
 	"WEEK": "Εβδομάδα {weekNumber}",
-
 	"N": "B",
 	"NNE": "BBA",
 	"NE": "BA",
@@ -26,11 +24,9 @@
 	"WNW": "ΔΒΔ",
 	"NW": "ΒΔ",
 	"NNW": "ΒΒΔ",
-
 	"FEELS": "Αίσθηση {DEGREE}",
 	"PRECIP_POP": "Πιθ. υετού",
 	"PRECIP_AMOUNT": "Ποσότητα υετού",
-
 	"MODULE_CONFIG_CHANGED": "Οι επιλογές διαμόρφωσης για το module {MODULE_NAME} έχουν αλλάξει.\nΕλέγξτε την τεκμηρίωση.",
 	"MODULE_CONFIG_ERROR": "Σφάλμα στο module {MODULE_NAME}. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "Λανθασμένη μορφή url.",
@@ -40,15 +36,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Σφάλμα διακομιστή. Θα ξαναπροσπαθήσω αργότερα.",
 	"MODULE_ERROR_CLIENT_ERROR": "Το αίτημα απέτυχε.",
 	"MODULE_ERROR_UNSPECIFIED": "Ελέγξτε τα αρχεία καταγραφής για περισσότερες λεπτομέρειες.",
-
 	"NEWSFEED_NO_ITEMS": "Δεν υπάρχουν ειδήσεις αυτή τη στιγμή.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "Το άρθρο δεν μπορεί να εμφανιστεί εδώ.",
-
 	"UPDATE_NOTIFICATION": "Διατίθεται ενημέρωση MagicMirror².",
 	"UPDATE_NOTIFICATION_MODULE": "Διατίθεται ενημέρωση για το module {MODULE_NAME}.",
 	"UPDATE_INFO_SINGLE": "Η τρέχουσα εγκατάσταση είναι {COMMIT_COUNT} commit πίσω στο branch {BRANCH_NAME}.",
 	"UPDATE_INFO_MULTIPLE": "Η τρέχουσα εγκατάσταση είναι {COMMIT_COUNT} commit πίσω στο branch {BRANCH_NAME}",
 	"UPDATE_NOTIFICATION_DONE": "Η ενημέρωση ολοκληρώθηκε για το module {MODULE_NAME}",
 	"UPDATE_NOTIFICATION_ERROR": "Η ενημέρωση απέτυχε για το module {MODULE_NAME}",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "Απαιτείται επανεκκίνηση του MagicMirror."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "Απαιτείται επανεκκίνηση του MagicMirror.",
+	"sysTitle": "MagicMirror² Ειδοποίηση",
+	"welcome": "Καλώς ήρθατε, η εκκίνηση ήταν επιτυχής!"
 }

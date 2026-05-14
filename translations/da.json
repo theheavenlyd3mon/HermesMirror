@@ -1,6 +1,5 @@
 {
 	"LOADING": "Indlæser …",
-
 	"DAYBEFOREYESTERDAY": "Forgårs",
 	"YESTERDAY": "I går",
 	"TODAY": "I dag",
@@ -9,7 +8,6 @@
 	"RUNNING": "Slutter om",
 	"EMPTY": "Ingen kommende begivenheder.",
 	"WEEK": "Uge {weekNumber}",
-
 	"N": "N",
 	"NNE": "NNØ",
 	"NE": "NØ",
@@ -26,11 +24,9 @@
 	"WNW": "VNV",
 	"NW": "NV",
 	"NNW": "NNV",
-
 	"FEELS": "Føles som {DEGREE}",
 	"PRECIP_POP": "Sandsynlighed for nedbør",
 	"PRECIP_AMOUNT": "Nedbørsmængde",
-
 	"MODULE_CONFIG_CHANGED": "Konfigurationsmulighederne for {MODULE_NAME} modulet er ændret.\nSe venligst dokumentationen.",
 	"MODULE_CONFIG_ERROR": "Fejl i {MODULE_NAME} modulet. {ERROR}",
 	"MODULE_ERROR_MALFORMED_URL": "Forkert url.",
@@ -40,15 +36,15 @@
 	"MODULE_ERROR_SERVER_ERROR": "Serverfejl. Prøver igen senere.",
 	"MODULE_ERROR_CLIENT_ERROR": "Anmodning mislykkedes.",
 	"MODULE_ERROR_UNSPECIFIED": "Tjek logfiler for flere detaljer.",
-
 	"NEWSFEED_NO_ITEMS": "Ingen nyheder i øjeblikket.",
 	"NEWSFEED_ARTICLE_UNAVAILABLE": "Artiklen kan ikke vises her.",
-
 	"UPDATE_NOTIFICATION": "MagicMirror² opdatering tilgængelig.",
 	"UPDATE_NOTIFICATION_MODULE": "Opdatering tilgængelig for {MODULE_NAME} modulet.",
 	"UPDATE_INFO_SINGLE": "Den nuværende installation er {COMMIT_COUNT} commit bagud på {BRANCH_NAME} branch'en.",
 	"UPDATE_INFO_MULTIPLE": "Den nuværende installation er {COMMIT_COUNT} commits bagud på {BRANCH_NAME} branch'en.",
 	"UPDATE_NOTIFICATION_DONE": "Opdatering færdig for {MODULE_NAME} modulet",
 	"UPDATE_NOTIFICATION_ERROR": "Opdateringsfejl for {MODULE_NAME} modulet",
-	"UPDATE_NOTIFICATION_NEED-RESTART": "Genstart af MagicMirror er påkrævet."
+	"UPDATE_NOTIFICATION_NEED-RESTART": "Genstart af MagicMirror er påkrævet.",
+	"sysTitle": "MagicMirror² Notifikation",
+	"welcome": "Velkommen, modulet er succesfuldt startet!"
 }

@@ -96,7 +96,6 @@ Module.register("weather", {
 
 	// Start the weather module.
 	start () {
-		moment.locale(this.config.lang);
 
 		if (this.config.useKmh) {
 			Log.warn("[weather] Deprecation warning: Your are using the deprecated config values 'useKmh'. Please switch to windUnits!");
@@ -399,20 +398,7 @@ Module.register("weather", {
 		this.nunjucksEnvironment().addFilter(
 			"opacity",
 			function (currentStep, numSteps) {
-				if (this.config.fade && this.config.fadePoint < 1) {
-					if (this.config.fadePoint < 0) {
-						this.config.fadePoint = 0;
-					}
-					const startingPoint = numSteps * this.config.fadePoint;
-					const numFadesteps = numSteps - startingPoint;
-					if (currentStep >= startingPoint) {
-						return 1 - (currentStep - startingPoint) / numFadesteps;
-					} else {
-						return 1;
-					}
-				} else {
-					return 1;
-				}
+				return CalendarUtils.calculateFadeOpacity(this.config.fade, this.config.fadePoint, numSteps, currentStep);
 			}.bind(this)
 		);
 	}

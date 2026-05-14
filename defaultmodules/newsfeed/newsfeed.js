@@ -66,9 +66,6 @@ Module.register("newsfeed", {
 	start () {
 		Log.info(`Starting module: ${this.name}`);
 
-		// Set locale.
-		moment.locale(config.language);
-
 		this.newsItems = [];
 		this.loaded = false;
 		this.error = null;

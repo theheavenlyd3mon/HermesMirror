@@ -44,7 +44,7 @@ function createWindow () {
 	}
 
 	let electronSwitchesDefaults = ["autoplay-policy", "no-user-gesture-required"];
-	app.commandLine.appendSwitch(...new Set(electronSwitchesDefaults, config.electronSwitches));
+	app.commandLine.appendSwitch(...new Set([...electronSwitchesDefaults, ...(config.electronSwitches || [])]));
 	let electronOptionsDefaults = {
 		width: electronSize.width,
 		height: electronSize.height,
@@ -179,14 +179,6 @@ app.on("before-quit", async (event) => {
 	}, 3000); // Force-quit after 3 seconds.
 	await core.stop();
 	process.exit(0);
-});
-
-/**
- * Handle errors from self-signed certificates
- */
-app.on("certificate-error", (event, webContents, url, error, certificate, callback) => {
-	event.preventDefault();
-	callback(true);
 });
 
 if (process.env.clientonly) {

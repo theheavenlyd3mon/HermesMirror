@@ -42,7 +42,14 @@ function Server (configObj) {
 			}
 			const io = socketio(server, {
 				cors: {
-					origin: /.*$/,
+					origin: (origin, callback) => {
+						// Restrict to localhost origins only (MagicMirror runs locally)
+						if (!origin || origin.startsWith("http://localhost") || origin.startsWith("http://127.0.0.1") || origin.startsWith("http://[::1]")) {
+							callback(null, true);
+						} else {
+							callback(new Error("Not allowed by CORS"));
+						}
+					},
 					credentials: true
 				},
 				allowEIO3: true,
