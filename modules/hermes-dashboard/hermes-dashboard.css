@@ -1,0 +1,118 @@
+/* Hermes Dashboard — Dark mirror card styles */
+
+/* Container
+   Transparent background so it inherits the mirror's dark theme */
+.hermes-dashboard {
+  background: transparent;
+  color: #fff;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+}
+
+/* Offline indicator */
+.hermes-dashboard-offline {
+  font-size: 14px;
+  color: #e74c3c;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+/* Empty state */
+.hermes-dashboard-empty {
+  font-size: 16px;
+  opacity: 0.4;
+  font-style: italic;
+  padding: 12px 0;
+}
+
+/* Card
+   Thin border, subtle background raise */
+.hermes-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  border: 1px solid rgb(255 255 255 / 6%);
+  border-radius: 4px;
+  background: rgb(255 255 255 / 3%);
+  max-width: 100%;
+  overflow: hidden;
+
+  /* Smooth transition for status changes */
+  transition: all 0.3s ease;
+}
+
+/* Card title */
+.hermes-card-title {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Assignee badge */
+.hermes-card-assignee {
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 0.5;
+  margin-top: 1px;
+}
+
+/* Status badge — shared base */
+.hermes-card-status {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-top: 4px;
+
+  /* Smooth transition for status color changes */
+  transition: all 0.3s ease;
+}
+
+/* Status badge — color states */
+.hermes-card-status-ready {
+  background: rgb(52 152 219 / 20%); /* #3498db */
+  color: #3498db;
+}
+
+.hermes-card-status-running {
+  background: rgb(243 156 18 / 20%); /* #f39c12 */
+  color: #f39c12;
+}
+
+.hermes-card-status-done {
+  background: rgb(39 174 96 / 20%); /* #27ae60 */
+  color: #27ae60;
+}
+
+.hermes-card-status-blocked {
+  background: rgb(231 76 60 / 20%); /* #e74c3c */
+  color: #e74c3c;
+}
+
+/* Card status accent — thin left border accent by status */
+.hermes-card-ready {
+  border-left: 2px solid #3498db;
+}
+
+.hermes-card-running {
+  border-left: 2px solid #f39c12;
+}
+
+.hermes-card-done {
+  border-left: 2px solid #27ae60;
+}
+
+.hermes-card-blocked {
+  border-left: 2px solid #e74c3c;
+}

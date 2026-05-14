@@ -1,0 +1,51 @@
+.hermes-status {
+  width: 100%;
+  position: relative;
+}
+
+.hermes-status__bar {
+  width: 100%;
+  transition:
+    background-color 2s ease,
+    opacity 2s ease;
+}
+
+/* ---- States ---- */
+
+.hermes-status__bar--idle {
+  /* Dim transparent grey — ambient, non-intrusive */
+}
+
+.hermes-status__bar--active {
+  /* Warm amber pulse — something is happening */
+  animation: hermes-pulse var(--hermes-pulse-speed, 2000ms) ease-in-out infinite;
+}
+
+.hermes-status__bar--blocked {
+  /* Attention red — needs human input */
+}
+
+.hermes-status__bar--done {
+  /* Cool green — all tasks complete */
+}
+
+.hermes-status__bar--disconnected {
+  /* Dimmed red pulse — gateway unreachable with pending tasks */
+  animation: hermes-pulse var(--hermes-pulse-speed, 2000ms) ease-in-out infinite;
+}
+
+/* ---- Keyframes ---- */
+
+@keyframes hermes-pulse {
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
