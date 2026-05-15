@@ -79,8 +79,10 @@ A kanban fix task that triggers the Electron GUI will be reclaimed. Use `npm run
 
 **Known gaps:**
 - `.gitignore` line 58 (`/modules/*`) ignores ALL modules — force-add needed on future adds (already tracked)
-- Repo description still says "MagicMirror²" — needs manual update in GitHub Settings (PAT lacks metadata scope)
+- Repo description updated ✓ — "HermesMirror — a modular smart mirror platform with deep Hermes Agent integration. Forked from MagicMirror²."
+  - PAT lacks `administration` scope for repo metadata API changes; use GitHub Settings UI for future updates
 - README.md rewritten for HermesMirror branding — pushed
+- Homepage: not set — could point to hermes-agent docs or a project site if desired
 
 ### Phase 1.5 — Testing & CI (next up)
 - [ ] **Unit tests for diffBoardState()** — new tasks, status changes, archived removals, empty states
