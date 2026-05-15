@@ -1,5 +1,6 @@
 const NodeHelper = require("node_helper");
 const Log = require("logger");
+const { diffBoardState, statusToEvent, clamp } = require("./board-utils");
 
 /**
  * Diff two board states and return individual task events.
@@ -73,7 +74,8 @@ function clamp(val, min, max) {
 	return Math.min(max, Math.max(min, val));
 }
 
-module.exports = NodeHelper.create({
+// Exported for unit testing
+const _helper = NodeHelper.create({
 	config: {},
 
 	/** Last known board state from gateway. null until first successful fetch. */
@@ -284,3 +286,10 @@ module.exports = NodeHelper.create({
 		}, this.retryDelay);
 	}
 });
+
+module.exports = _helper;
+
+// Pure functions exported for unit testing
+module.exports.diffBoardState = diffBoardState;
+module.exports.statusToEvent = statusToEvent;
+module.exports.clamp = clamp;
