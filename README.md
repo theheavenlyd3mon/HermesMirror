@@ -10,6 +10,9 @@
 
 **HermesMirror** is a modular smart mirror platform — a fork of [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror) with deep [Hermes Agent](https://hermes-agent.nousresearch.com) integration. Turn any mirror into an intelligent ambient display that shows your tasks, agent activity, weather, calendar, and more — all driven by your personal AI agent stack.
 
+![HermesMirror live dashboard](docs/screenshot.png)
+*HermesMirror running on localhost:8080 — weather, holidays, news ticker, and Hermes agent modules (ambient status bar + kanban dashboard) all rendering live.*
+
 ## Hermes Integration
 
 HermesMirror comes with three built-in modules that connect your mirror to the Hermes kanban system:
