@@ -99,40 +99,66 @@ module.exports = NodeHelper.create({
 
 	start() {
 		Log.log(`Starting node helper for: ${this.name}`);
+
+		// Use config from MM framework if available, or fall back to defaults.
+		// This allows the bridge to work in headless/server-only mode where
+		// no browser client sends CONFIG via socket.
+		const config = this.config && this.config.gatewayUrl ? this.config : {
+			gatewayUrl: "http://127.0.0.1:8643",
+			refreshInterval: 30
+		};
+
+		this._initPolling(config);
+	},
+
+	/**
+	 * Initialize polling with the given config.
+	 * Extracted so it can be called from start() and from CONFIG notification.
+	 * @param {object} cfg - Module configuration with gatewayUrl and refreshInterval
+	 */
+	_initPolling(cfg) {
+		this.config = cfg;
+
+		if (!this.config.gatewayUrl) {
+			Log.error(`[${this.name}] No gatewayUrl configured — polling disabled`);
+			return;
+		}
+
+		if (!this.config.refreshInterval || this.config.refreshInterval < 1) {
+			Log.warn(`[${this.name}] refreshInterval ${this.config.refreshInterval} invalid, using default 30s`);
+			this.config.refreshInterval = 30;
+		}
+
+		this.baseInterval = this.config.refreshInterval * 1000;
+		this.currentInterval = this.baseInterval;
+		this.lastState = null;
+		this.pollCount = 0;
+
+		Log.log(`[${this.name}] Starting gateway poll: ${this.config.gatewayUrl} every ${this.config.refreshInterval}s`);
+
+		// Clear existing timer if restarting
+		if (this.pollTimer) {
+			clearInterval(this.pollTimer);
+			this.pollTimer = null;
+		}
+
+		// Immediate first fetch, then interval
+		this.fetchAndDiff();
+		this.pollTimer = setInterval(() => {
+			this.fetchAndDiff();
+		}, this.baseInterval);
 	},
 
 	/**
 	 * Receive config from client on DOM_OBJECTS_CREATED.
+	 * Updates config and re-initializes polling if bridge was running
+	 * with default config from start().
 	 * @param {string} notification
 	 * @param {object} payload
 	 */
 	socketNotificationReceived(notification, payload) {
 		if (notification === "CONFIG") {
-			this.config = payload;
-
-			// Validate config
-			if (!this.config.gatewayUrl) {
-				Log.error(`[${this.name}] No gatewayUrl configured — polling disabled`);
-				return;
-			}
-
-			if (!this.config.refreshInterval || this.config.refreshInterval < 1) {
-				Log.warn(`[${this.name}] refreshInterval ${this.config.refreshInterval} invalid, using default 30s`);
-				this.config.refreshInterval = 30;
-			}
-
-			this.baseInterval = this.config.refreshInterval * 1000;
-			this.currentInterval = this.baseInterval;
-			this.lastState = null;
-			this.pollCount = 0;
-
-			Log.log(`[${this.name}] Starting gateway poll: ${this.config.gatewayUrl} every ${this.config.refreshInterval}s`);
-
-			// Immediate first fetch, then interval
-			this.fetchAndDiff();
-			this.pollTimer = setInterval(() => {
-				this.fetchAndDiff();
-			}, this.baseInterval);
+			this._initPolling(payload);
 		}
 	},
 

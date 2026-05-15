@@ -1,60 +1,51 @@
-# ![MagicMirror²: The open source modular smart mirror platform.](.github/header.png)
+# ![HermesMirror](.github/header.png)
 
 <p style="text-align: center">
   <a href="https://choosealicense.com/licenses/mit">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
  </a>
- <img src="https://img.shields.io/github/actions/workflow/status/magicmirrororg/magicmirror/automated-tests.yaml" alt="GitHub Actions">
- <img src="https://img.shields.io/github/check-runs/magicmirrororg/magicmirror/master" alt="Build Status">
- <a href="https://github.com/MagicMirrorOrg/MagicMirror">
-  <img src="https://img.shields.io/github/stars/magicmirrororg/magicmirror?style=social" alt="GitHub Stars">
- </a>
+ <img src="https://img.shields.io/github/actions/workflow/status/theheavenlyd3mon/HermesMirror/automated-tests.yaml?branch=master" alt="GitHub Actions">
+ <img src="https://img.shields.io/github/v/tag/theheavenlyd3mon/HermesMirror" alt="Version">
 </p>
 
-**MagicMirror²** is an open source modular smart mirror platform. With a growing list of installable modules, the **MagicMirror²** allows you to convert your hallway or bathroom mirror into your personal assistant. **MagicMirror²** is built by the creator of [the original MagicMirror](https://michaelteeuw.nl/tagged/magicmirror) with the incredible help of a [growing community of contributors](https://github.com/MagicMirrorOrg/MagicMirror/graphs/contributors).
+**HermesMirror** is a modular smart mirror platform — a fork of [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror) with deep [Hermes Agent](https://hermes-agent.nousresearch.com) integration. Turn any mirror into an intelligent ambient display that shows your tasks, agent activity, weather, calendar, and more — all driven by your personal AI agent stack.
 
-MagicMirror² focuses on a modular plugin system and uses [Electron](https://www.electronjs.org/) as an application wrapper. So no more web server or browser installs necessary!
+## Hermes Integration
 
-![Animated demonstration of MagicMirror²](https://magicmirror.builders/img/demo.gif)
+HermesMirror comes with three built-in modules that connect your mirror to the Hermes kanban system:
+
+| Module | Role | Status |
+|---|---|---|
+| **hermes-bridge** | Infrastructure — polls the [Kanban API plugin](https://github.com/theheavenlyd3mon/HermesMirror) and distributes task events to all display modules via Socket.IO. Renders nothing. | ✅ Live |
+| **hermes-dashboard** | Kanban task board — shows active, running, and blocked tasks with status badges and assignee labels. | ✅ Live |
+| **hermes-status** | Ambient status bar — thin colored bar at the top of the mirror. Green = all clear, amber = active tasks, red = blocked or disconnected. | ✅ Live |
+
+### Architecture
+
+```
+Kanban API Plugin (8643) ─── hermes-bridge ── Socket.IO ──► Browser
+       ▲ polls every 30s        │                            │
+       │                        ├── hermes-dashboard          │
+  ┌────┴────┐                   └── hermes-status             │
+  │kanban.db│                    (display modules)            │
+  └─────────┘                                                ▼
+                                                      Your Mirror!
+```
 
 ## Documentation
 
-For the full documentation including **[installation instructions](https://docs.magicmirror.builders/getting-started/installation.html)**, please visit our dedicated documentation website: [https://docs.magicmirror.builders](https://docs.magicmirror.builders).
+Full MagicMirror² documentation is available at [docs.magicmirror.builders](https://docs.magicmirror.builders). Hermes-specific setup and configuration guides are being added to the HermesMirror wiki.
 
-## Links
+## Key Commands
 
-- Website: [https://magicmirror.builders](https://magicmirror.builders)
-- Documentation: [https://docs.magicmirror.builders](https://docs.magicmirror.builders)
-- Forum: [https://forum.magicmirror.builders](https://forum.magicmirror.builders)
-  - Technical discussions: <https://forum.magicmirror.builders/category/11/core-system>
-- Discord: [https://discord.gg/J5BAtvx](https://discord.gg/J5BAtvx)
-- Blog: [https://michaelteeuw.nl/tagged/magicmirror](https://michaelteeuw.nl/tagged/magicmirror)
-- Donations: [https://magicmirror.builders/#donate](https://magicmirror.builders/#donate)
+| Command | Purpose |
+|---|---|
+| `npm run server` | Start headless HTTP server (no Electron) |
+| `npm test` | Run vitest test suite |
+| `npm run config:check` | Validate config.js |
+| `npm run lint:js` | ESLint check |
+| `npm run lint:css` | Stylelint check |
 
-## Contributing Guidelines
+## License
 
-Contributions of all kinds are welcome, not only in the form of code but also with regards to
-
-- bug reports
-- documentation
-- translations
-
-For the full contribution guidelines, check out: [https://docs.magicmirror.builders/about/contributing.html](https://docs.magicmirror.builders/about/contributing.html)
-
-## Enjoying MagicMirror? Consider a donation!
-
-MagicMirror² is Open Source and free. That doesn't mean we don't need any money.
-
-Please consider a donation to help us cover the ongoing costs like webservers and email services.
-If we receive enough donations we might even be able to free up some working hours and spend some extra time improving the MagicMirror² core.
-
-To donate, please follow [this](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G5D8E9MR5DTD2&source=url) link.
-
-<p style="text-align: center">
-  <a href="https://forum.magicmirror.builders/topic/728/magicmirror-is-voted-number-1-in-the-magpi-top-50">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://magicmirror.builders/img/magpi-best-watermark.png">
-      <img src="https://magicmirror.builders/img/magpi-best-watermark-custom.png" width="150" alt="MagPi Top 50">
-    </picture>
-  </a>
-</p>
+MIT — same as MagicMirror². Free to use, modify, and share.

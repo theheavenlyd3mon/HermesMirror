@@ -7,7 +7,7 @@
 
 Module.register("hermes-bridge", {
 	defaults: {
-		gatewayUrl: "http://127.0.0.1:8642",
+		gatewayUrl: "http://127.0.0.1:8643",
 		refreshInterval: 30
 	},
 
