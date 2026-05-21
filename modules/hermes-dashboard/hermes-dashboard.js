@@ -81,7 +81,7 @@ Module.register("hermes-dashboard", {
 
 		// Sort: blocked first, then running, then ready, then done
 		const statusOrder = { blocked: 0, running: 1, ready: 2, done: 3 };
-		visible.sort((a, b) => (statusOrder[a.status] || 4) - (statusOrder[b.status] || 4));
+		visible.sort((a, b) => (statusOrder[a.status] ?? 4) - (statusOrder[b.status] ?? 4));
 
 		// Cap at maxTasks
 		visible = visible.slice(0, this.config.maxTasks);
