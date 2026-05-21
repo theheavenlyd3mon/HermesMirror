@@ -84,13 +84,15 @@ A kanban fix task that triggers the Electron GUI will be reclaimed. Use `npm run
 - README.md rewritten for HermesMirror branding — pushed
 - Homepage: not set — could point to hermes-agent docs or a project site if desired
 
-### Phase 1.5 — Testing & CI (next up)
-- [ ] **Unit tests for diffBoardState()** — new tasks, status changes, archived removals, empty states
+### Phase 1.5 — Testing & CI (in progress)
+- [x] **Unit tests for board-utils** — `diffBoardState()`, `statusToEvent()`, `clamp()` — 25 tests
+- [x] **Unit tests for dashboard** — notification handling, `_upsertTask()`, `_renderCard()`, sorting, filtering, empty state — 38 tests
+- [x] **Unit tests for status** — state machine, `_recomputeCounts()`, notifications, DOM rendering — 35 tests
 - [ ] **Unit tests for backoff logic** — fetch failure → 1s → 2s → 4s → ... → 30s cap
-- [ ] **Unit tests for dashboard** — notificationReceived(), _upsertTask(), _renderCard()
-- [ ] **Unit tests for status** — notificationReceived(), visual state transitions
 - [ ] **GitHub Actions CI** — run tests on push
 - [ ] **ESLint: our modules** — add explicit config for hermes-* modules
+
+**Bug found by tests:** dashboard sort used `||` which treated `blocked` (value `0`) as falsy, causing blocked tasks to sort last. Fixed with `??`.
 
 ### Phase 2 — hermes-chat (text interface on mirror)
 - [ ] Research: MMM-AssistantMk2, MMM-GoogleAssistant, MMM-Hotword patterns
