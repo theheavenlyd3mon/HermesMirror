@@ -137,9 +137,9 @@ Module.register("hermes-dashboard", {
 		switch (status) {
 			case "blocked": return "🚫";
 			case "running": return "🔄";
-			case "ready":   return "⚡";
-			case "done":    return "✅";
-			default:        return "○";
+			case "ready": return "⚡";
+			case "done": return "✅";
+			default: return "○";
 		}
 	},
 

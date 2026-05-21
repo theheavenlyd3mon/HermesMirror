@@ -11,7 +11,7 @@ Module.register("hermes-bridge", {
 		refreshInterval: 30
 	},
 
-	start() {
+	start () {
 		Log.info(`Starting module: ${this.name}`);
 	},
 
@@ -19,7 +19,7 @@ Module.register("hermes-bridge", {
 	 * Invisible DOM — this module is infrastructure, not display.
 	 * @returns {HTMLElement}
 	 */
-	getDom() {
+	getDom () {
 		const wrapper = document.createElement("div");
 		wrapper.style.display = "none";
 		return wrapper;
@@ -28,10 +28,8 @@ Module.register("hermes-bridge", {
 	/**
 	 * Send config to node_helper once DOM is created, so it can start polling.
 	 * @param {string} notification
-	 * @param {*} payload
-	 * @param {object} sender
 	 */
-	notificationReceived(notification, payload, sender) {
+	notificationReceived (notification) {
 		if (notification === "DOM_OBJECTS_CREATED") {
 			this.sendSocketNotification("CONFIG", this.config);
 		}
@@ -43,7 +41,7 @@ Module.register("hermes-bridge", {
 	 * @param {string} notification
 	 * @param {*} payload
 	 */
-	socketNotificationReceived(notification, payload) {
+	socketNotificationReceived (notification, payload) {
 		// Forward all HERMES_* notifications to every module
 		this.sendNotification(notification, payload);
 	}

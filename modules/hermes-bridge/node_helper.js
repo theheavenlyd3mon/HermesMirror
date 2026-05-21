@@ -27,16 +27,18 @@ const _helper = NodeHelper.create({
 	/** Current retry delay in ms for backoff after gateway fetch failures. Reset to null on success. */
 	retryDelay: null,
 
-	start() {
+	start () {
 		Log.log(`Starting node helper for: ${this.name}`);
 
 		// Use config from MM framework if available, or fall back to defaults.
 		// This allows the bridge to work in headless/server-only mode where
 		// no browser client sends CONFIG via socket.
-		const config = this.config && this.config.gatewayUrl ? this.config : {
-			gatewayUrl: "http://127.0.0.1:8643",
-			refreshInterval: 30
-		};
+		const config = this.config && this.config.gatewayUrl
+			? this.config
+			: {
+				gatewayUrl: "http://127.0.0.1:8643",
+				refreshInterval: 30
+			};
 
 		this._initPolling(config);
 	},
@@ -46,7 +48,7 @@ const _helper = NodeHelper.create({
 	 * Extracted so it can be called from start() and from CONFIG notification.
 	 * @param {object} cfg - Module configuration with gatewayUrl and refreshInterval
 	 */
-	_initPolling(cfg) {
+	_initPolling (cfg) {
 		this.config = cfg;
 
 		if (!this.config.gatewayUrl) {
@@ -86,7 +88,7 @@ const _helper = NodeHelper.create({
 	 * @param {string} notification
 	 * @param {object} payload
 	 */
-	socketNotificationReceived(notification, payload) {
+	socketNotificationReceived (notification, payload) {
 		if (notification === "CONFIG") {
 			this._initPolling(payload);
 		}
@@ -95,7 +97,7 @@ const _helper = NodeHelper.create({
 	/**
 	 * Stop the poll timer on shutdown.
 	 */
-	stop() {
+	stop () {
 		if (this.pollTimer) {
 			clearInterval(this.pollTimer);
 			this.pollTimer = null;
@@ -107,7 +109,7 @@ const _helper = NodeHelper.create({
 	 * Fetch the current board from gateway, diff against lastState,
 	 * and emit events.
 	 */
-	async fetchAndDiff() {
+	async fetchAndDiff () {
 		const url = `${this.config.gatewayUrl}/api/kanban/board`;
 
 		let response;
@@ -180,7 +182,7 @@ const _helper = NodeHelper.create({
 	 * Handle fetch failure with exponential backoff.
 	 * @param {Error} err
 	 */
-	handleFetchError(err) {
+	handleFetchError (err) {
 		Log.error(`[${this.name}] Gateway fetch failed: ${err.message}`);
 
 		// Emit disconnected status
