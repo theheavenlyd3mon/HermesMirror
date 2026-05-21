@@ -87,10 +87,7 @@ Module.register("hermes-dashboard", {
 		visible = visible.slice(0, this.config.maxTasks);
 
 		if (visible.length === 0) {
-			const empty = document.createElement("div");
-			empty.className = "hermes-dashboard-empty";
-			empty.innerHTML = "All clear — no active tasks";
-			wrapper.appendChild(empty);
+			wrapper.appendChild(this._renderEmpty());
 			return wrapper;
 		}
 
@@ -106,6 +103,72 @@ Module.register("hermes-dashboard", {
 	// ------------------------------------------------------------------
 
 	/**
+	 * Render the empty state with a checkmark icon.
+	 */
+	_renderEmpty () {
+		const container = document.createElement("div");
+		container.className = "hermes-dashboard-empty";
+
+		const icon = document.createElement("div");
+		icon.className = "hermes-dashboard-empty-icon";
+		icon.textContent = "✓";
+
+		const text = document.createElement("div");
+		text.className = "hermes-dashboard-empty-text";
+		text.textContent = "All clear";
+
+		const sub = document.createElement("div");
+		sub.className = "hermes-dashboard-empty-sub";
+		sub.textContent = "no active tasks";
+
+		container.appendChild(icon);
+		container.appendChild(text);
+		container.appendChild(sub);
+
+		return container;
+	},
+
+	/**
+	 * Get a status icon (emoji) for a given task status.
+	 * @param {string} status
+	 * @returns {string}
+	 */
+	_statusIcon (status) {
+		switch (status) {
+			case "blocked": return "🚫";
+			case "running": return "🔄";
+			case "ready":   return "⚡";
+			case "done":    return "✅";
+			default:        return "○";
+		}
+	},
+
+	/**
+	 * Get the priority level (1-3) for a task, defaulting to 2.
+	 * @param {object} task
+	 * @returns {number}
+	 */
+	_priorityLevel (task) {
+		const p = parseInt(task.priority, 10);
+		if (p === 1) return 1;
+		if (p === 2) return 2;
+		return 3;
+	},
+
+	/**
+	 * Get the priority CSS class for a priority level.
+	 * @param {number} level 1-3
+	 * @returns {string}
+	 */
+	_priorityClass (level) {
+		switch (level) {
+			case 1: return "hermes-card-priority-high";
+			case 2: return "hermes-card-priority-medium";
+			default: return "hermes-card-priority-low";
+		}
+	},
+
+	/**
 	 * Insert or update a task in the local tasks array by task_id.
 	 * @param payload
 	 */
@@ -119,28 +182,53 @@ Module.register("hermes-dashboard", {
 	},
 
 	/**
-	 * Render a single task as a card DOM element.
+	 * Render a single task as a card DOM element — Glass + Glow style.
 	 * @param task
 	 */
 	_renderCard (task) {
 		const card = document.createElement("div");
 		card.className = `hermes-card hermes-card-${task.status}`;
 
+		// Header row: title + icon badge
+		const header = document.createElement("div");
+		header.className = "hermes-card-header";
+
 		const title = document.createElement("div");
 		title.className = "hermes-card-title";
 		title.textContent = task.title || "(untitled)";
 
-		const assignee = document.createElement("div");
+		const icon = document.createElement("span");
+		icon.className = "hermes-card-icon";
+		icon.textContent = this._statusIcon(task.status);
+
+		header.appendChild(title);
+		header.appendChild(icon);
+		card.appendChild(header);
+
+		// Meta row: assignee (with priority dot) + status label
+		const meta = document.createElement("div");
+		meta.className = "hermes-card-meta";
+
+		const assignee = document.createElement("span");
 		assignee.className = "hermes-card-assignee";
-		assignee.textContent = task.assignee || "";
 
-		const status = document.createElement("div");
-		status.className = `hermes-card-status hermes-card-status-${task.status}`;
-		status.textContent = task.status;
+		if (task.assignee) {
+			const priority = this._priorityLevel(task);
+			const dot = document.createElement("span");
+			dot.className = `hermes-card-priority-dot ${this._priorityClass(priority)}`;
+			assignee.appendChild(dot);
+			assignee.appendChild(document.createTextNode(task.assignee));
+		} else {
+			assignee.textContent = "\u2014";
+		}
 
-		card.appendChild(title);
-		card.appendChild(assignee);
-		card.appendChild(status);
+		const statusLabel = document.createElement("span");
+		statusLabel.className = "hermes-card-meta-status";
+		statusLabel.textContent = task.status;
+
+		meta.appendChild(assignee);
+		meta.appendChild(statusLabel);
+		card.appendChild(meta);
 
 		return card;
 	}
