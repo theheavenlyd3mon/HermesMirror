@@ -88,9 +88,9 @@ A kanban fix task that triggers the Electron GUI will be reclaimed. Use `npm run
 - [x] **Unit tests for board-utils** — `diffBoardState()`, `statusToEvent()`, `clamp()` — 25 tests
 - [x] **Unit tests for dashboard** — notification handling, `_upsertTask()`, `_renderCard()`, sorting, filtering, empty state — 38 tests
 - [x] **Unit tests for status** — state machine, `_recomputeCounts()`, notifications, DOM rendering — 35 tests
+- [x] **ESLint: our modules** — narrowed `globalIgnores` to `modules/default/**`, 0 errors in hermes-* modules
 - [ ] **Unit tests for backoff logic** — fetch failure → 1s → 2s → 4s → ... → 30s cap
-- [ ] **GitHub Actions CI** — run tests on push
-- [ ] **ESLint: our modules** — add explicit config for hermes-* modules
+- [ ] **GitHub Actions CI** — already works (existing `automated-tests.yaml` runs `vitest run` which picks up our tests)
 
 **Bug found by tests:** dashboard sort used `||` which treated `blocked` (value `0`) as falsy, causing blocked tasks to sort last. Fixed with `??`.
 
